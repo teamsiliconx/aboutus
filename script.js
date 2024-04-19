@@ -32,56 +32,14 @@ navLink.forEach((n) => n.addEventListener("click", linkAction));
 /* HOME SWIPER */
 let homeSwiper = new Swiper(".home-swiper", {
   spaceBetween: 30,
-  loop: "true",
+  loop: "false",
 
   pagination: {
     el: ".swiper-pagination",
-    clickable: true,
-  },
-});
-
-/* change body's background color */
-
-let root = document.documentElement;
-
-homeSwiper.on("transitionEnd", function (e) {
-  if (this.activeIndex == 1) {
-    root.style.setProperty(
-      "--body-color",
-      "linear-gradient(to right, #2E0916, #200A2B)"
-    );
-    root.style.setProperty("--sub", "#ff5b79");
-    root.style.setProperty("--title-color", "#ffffff");
-    root.style.setProperty(
-      "--container-color",
-      "linear-gradient(136deg, #2E0916, #200A2B)"
-    );
-  }
-  if (this.activeIndex == 2) {
-    root.style.setProperty(
-      "--body-color",
-      "linear-gradient(to right, #E8CAFB, #6A4FB6)"
-    );
-    root.style.setProperty("--sub", "#303056");
-    root.style.setProperty("--title-color", "#303056");
-    root.style.setProperty(
-      "--container-color",
-      "linear-gradient(136deg, #E8CAFB, #6A4FB6)"
-    );
-  }
-  if (this.activeIndex == 3) {
-    root.style.setProperty(
-      "--body-color",
-      "linear-gradient(to right, #5B874B, #0C3720)"
-    );
-    root.style.setProperty("--sub", "#ffffff");
-    root.style.setProperty("--title-color", "#ffffff");
-    root.style.setProperty(
-      "--container-color",
-      "linear-gradient(136deg, #5B874B, #0C3720)"
-    );
+    clickable: true
   }
 });
+
 /* CHANGE BACKGROUND HEADER */
 function scrollHeader() {
   const header = document.getElementById("header");
@@ -96,7 +54,7 @@ let newSwiper = new Swiper(".new-swiper", {
   centeredSlides: true,
   slidesPerView: "auto",
   loop: "true",
-  spaceBetween: 16,
+  spaceBetween: 16
 });
 
 /* SCROLL SECTIONS ACTIVE LINK */
@@ -137,13 +95,13 @@ const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
   duration: 2500,
-  delay: 400,
+  delay: 400
   // reset: true
 });
 
 sr.reveal(`.home-swiper, .new-swiper, .newsletter__container`);
 sr.reveal(`.category__data, .trick__content, .footer__content`, {
-  interval: 100,
+  interval: 100
 });
 sr.reveal(`.about__data, .discount__img`, { origin: "left" });
 sr.reveal(`.about__img, .discount__data`, { origin: "right" });
